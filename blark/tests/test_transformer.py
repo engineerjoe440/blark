@@ -638,6 +638,9 @@ def test_global_attr_pragmas(rule_name: str, value: str, pragmas: List[str]):
         param("non_generic_type_name", "POINTER TO Package.FBName"),
         param("non_generic_type_name", "POINTER TO POINTER TO Package.FBName"),
         param("non_generic_type_name", "Package.FBName"),
+        param("non_generic_type_name", "POINTER TO STRING(255)"),
+        param("non_generic_type_name", "POINTER TO STRING(g_Constant + 1)"),
+        param("non_generic_type_name", "POINTER TO POINTER TO STRING(g_Constant + 1)"),
     ],
 )
 def test_type_name_roundtrip(rule_name, value):
