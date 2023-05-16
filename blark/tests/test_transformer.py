@@ -188,9 +188,15 @@ def test_literal(name, value, expected):
         param("single_byte_string_spec", "STRING[1]"),
         param("single_byte_string_spec", "STRING(1)"),
         param("single_byte_string_spec", "STRING(1) := 'abc'"),
+        param("single_byte_string_spec", "STRING(g_Constant)"),
+        param("single_byte_string_spec", "STRING(g_Constant + 1)"),
+        param("single_byte_string_spec", "STRING(g_Constant + 1) := 'abc'"),
         param("double_byte_string_spec", "WSTRING[1]"),
         param("double_byte_string_spec", "WSTRING(1)"),
         param("double_byte_string_spec", 'WSTRING(1) := "abc"'),
+        param("single_byte_string_spec", "WSTRING(g_Constant)"),
+        param("single_byte_string_spec", "WSTRING(g_Constant + 1)"),
+        param("single_byte_string_spec", "WSTRING(g_Constant + 1) := 'abc'"),
     ],
 )
 def test_literal_roundtrip(name, value):
